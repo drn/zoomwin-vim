@@ -1,8 +1,8 @@
 " ZoomWin:	Brief-like ability to zoom into/out-of a window
 " Author:	Charles Campbell
 "			original version by Ron Aaron
-" Date:		Feb 19, 2014 
-" Version:	25l	ASTRO-ONLY
+" Date:		Mar 09, 2014 
+" Version:	25n	ASTRO-ONLY
 " History: see :help zoomwin-history {{{1
 " GetLatestVimScripts: 508 1 :AutoInstall: ZoomWin.vim
 
@@ -18,7 +18,7 @@ if v:version < 702
  finish
 endif
 let s:keepcpo        = &cpo
-let g:loaded_ZoomWin = "v25l"
+let g:loaded_ZoomWin = "v25n"
 if !exists("g:zoomwin_localoptlist")
  let s:localoptlist   = ["ai","ar","bh","bin","bl","bomb","bt","cfu","ci","cin","cink","cino","cinw","cms","com","cpt","diff","efm","eol","ep","et","fenc","fex","ff","flp","fo","ft","gp","imi","ims","inde","inex","indk","inf","isk","key","kmp","lisp","mps","ml","ma","mod","nf","ofu","oft","pi","qe","ro","sw","sn","si","sts","spc","spf","spl","sua","swf","smc","syn","ts","tx","tw","udf","wfh","wfw","wm"]
 else
@@ -478,8 +478,10 @@ fun! s:SaveUserSettings()
   let s:keep_ss     = &ss
   let s:keep_wfh    = &wfh
   let s:keep_write  = &write
-  if has("xterm_clipboard")
+  if has("clipboard")
+"   call Decho("@* save    before: s:keep_star=".@*)
    let s:keep_star   = @*
+"   call Decho("@* save    after : s:keep_star=".@*)
   endif
   let s:keep_swf    = &swf
 
@@ -506,8 +508,10 @@ fun! s:RestoreUserSettings()
   let &ss    = s:keep_ss
   let &wfh   = s:keep_wfh
   let &write = s:keep_write
-  if has("xterm_clipboard") && exists("s:keep_star")
+  if has("clipboard") && exists("s:keep_star")
+"   call Decho( "@* restore before: s:keep_star=".@*)
    let @*     = s:keep_star
+"   call Decho("@* restore after : s:keep_star=".@*)
   endif
   let &swf   = s:keep_swf
   if v:version < 603

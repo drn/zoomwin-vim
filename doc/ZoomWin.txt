@@ -1,4 +1,4 @@
-*ZoomWin.txt*	Zoom into/out-of a window		Feb 19, 2014
+*ZoomWin.txt*	Zoom into/out-of a window		Mar 09, 2014
 Authors: Charles E. Campbell				*zoomwin*
          Ron Aaron
 Copyright: (c) 2004-2014 by Charles E. Campbell		*zoomwin-copyright*
@@ -90,7 +90,7 @@ Copyright: (c) 2004-2014 by Charles E. Campbell		*zoomwin-copyright*
 ==============================================================================
 4. History						*zoomwin-history*
 
-	v25	Jul 30, 2012	: * (Paul, google01239) ZoomWin wasn't saving the
+	v25	Jul 30, 2012	: (Paul, google01239) ZoomWin wasn't saving the
 				  local value of |'diff'|.  It has now been included
 				  in the s:localoptlist (options which are local).
 				* (Adam George) when clipboard=unnamed, ZoomWin
@@ -131,6 +131,10 @@ Copyright: (c) 2004-2014 by Charles E. Campbell		*zoomwin-copyright*
 				  restore |'shm'|, setting it to shm+=A to
 				  avoid "ATTENTION" messages when an existing
 				  swap file is involved.
+		Mar 09, 2014	* (Adam George) reported that the @* register
+				  problem was still present with MacOS (see
+				  Rodriguez, above).  Wrong clipboard test
+				  was used; fixed.
 	v24	Jan 29, 2009	: |g:ZoomWin_funcref| supported
 		May 22, 2009	* supports the saving and restoring of window
 				  variables across zooms
