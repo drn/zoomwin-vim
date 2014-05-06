@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#
+# Updates the repository with changes from Dr. Chip's ZoomWin root.
+#
+
+# commands should be run in the base repo directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# download and extract the vimball
+rm -rf temp
+mkdir temp
+curl -sSo temp/ZoomWin.vba.gz http://www.drchip.org/astronaut/vim/vbafiles/ZoomWin.vba.gz
+gunzip temp/ZoomWin.vba.gz
+
+# unpack the vimball
+vim temp/ZoomWin.vba -S unpack.vim
+
+# clean up artifacts
+rm -rf temp
+rm .VimballRecord
