@@ -1,4 +1,4 @@
-# Version 25i of [ZoomWin](http://www.drchip.org/astronaut/vim/#ZOOMWIN)
+# Version 25n of [ZoomWin](http://www.drchip.org/astronaut/vim/#ZOOMWIN)
 
 Pathogen-compatible source of Dr. Chip's ZoomWin plugin.
 
