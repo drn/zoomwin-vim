@@ -17,5 +17,4 @@ gunzip temp/ZoomWin.vba.gz
 vim temp/ZoomWin.vba -S unpack.vim
 
 # clean up artifacts
-rm -rf temp
-rm .VimballRecord
+rm -rf temp .VimballRecord
